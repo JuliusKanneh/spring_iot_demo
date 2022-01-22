@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+    <title>Data Page</title>
+
+</head>
+<body>
+<table>
+    <h2>Temperature: <span th:text="${temperature}"></span></h2>
+    <h2>Humidity: <span th:text="${humidity}"></span></h2>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Temperature</th>
+        <th>Humidity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="value : ${values}"
+         th:value="${value.id}">
+        <td th:text="${value.id}"></td>
+        <td th:text="${value.temp}"></td>
+        <td th:text="${value.hum}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
